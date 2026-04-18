@@ -1,10 +1,12 @@
 import { images } from "@/assets/images";
+import { useRouter } from "expo-router";
 import { styled } from "nativewind";
 import { ImageBackground, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView as RNSafeArea } from "react-native-safe-area-context";
 
 const SafeArea = styled(RNSafeArea);
 export default function Index() {
+  const router = useRouter();
   return (
     <SafeArea className="flex-1">
       <ImageBackground
@@ -17,7 +19,7 @@ export default function Index() {
           </Text>
           <TouchableOpacity
             className="bg-primary w-[80%] p-3 rounded-2xl mx-auto"
-            onPress={() => alert("Hello")}>
+            onPress={() => router.replace("/(tabs)/recipes")}>
             <Text className="text-white text-center text-xl font-medium">
               Lets Go
             </Text>

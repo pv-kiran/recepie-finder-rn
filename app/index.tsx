@@ -1,13 +1,29 @@
+import { images } from "@/assets/images";
 import { styled } from "nativewind";
-import { Text, View } from "react-native";
+import { ImageBackground, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView as RNSafeArea } from "react-native-safe-area-context";
+
 const SafeArea = styled(RNSafeArea);
 export default function Index() {
   return (
     <SafeArea className="flex-1">
-      <View>
-        <Text>Recepie Finder</Text>
-      </View>
+      <ImageBackground
+        className="flex-1 w-full h-full"
+        source={images.home}
+        resizeMode="cover">
+        <View className="gap-2 h-full justify-end pb-20">
+          <Text className="text-[24px] text-center p-4 text-amber-50 font-bold line leading-6">
+            Help your path to health goals with happiness
+          </Text>
+          <TouchableOpacity
+            className="bg-primary w-[80%] p-3 rounded-2xl mx-auto"
+            onPress={() => alert("Hello")}>
+            <Text className="text-white text-center text-xl font-medium">
+              Lets Go
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </ImageBackground>
     </SafeArea>
   );
 }

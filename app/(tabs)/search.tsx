@@ -12,7 +12,7 @@ const SafeArea = styled(RNSafeArea);
 
 const search = () => {
   const searchResult = ({ item }: { item: Recipe }) => {
-    return <RecipeCard recipe={item} />;
+    return <RecipeCard recipe={item} type="HORIZONTAL" />;
   };
   return (
     <SafeArea className="flex-1" edges={["top"]}>

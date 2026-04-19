@@ -1,8 +1,8 @@
+import SectionTitle from "@/components/common/sectionHeading";
 import CuisinesList from "@/components/cuisinesList";
 import FeaturedList from "@/components/featuredList";
 import Greetings from "@/components/greetings";
 import RecepieList from "@/components/recepieList";
-import SectionTitle from "@/components/sectionHeading";
 
 import { styled } from "nativewind";
 import React from "react";

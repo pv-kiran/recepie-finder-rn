@@ -44,7 +44,7 @@ const RecipeCard = ({
             className="h-24 w-24 rounded-2xl shrink-0"
           />
           <View className="flex-1 gap-3">
-            <Text numberOfLines={2} className="font-semibold text-xl">
+            <Text numberOfLines={2} className="font-semibold text-lg">
               {recipe.name}
             </Text>
             <View className="flex-row gap-4">

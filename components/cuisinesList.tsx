@@ -5,7 +5,7 @@ import { FlatList, View } from "react-native";
 
 const CuisinesList = () => {
   const renderCuisines = ({ item }: { item: CUISINE }) => {
-    return <Chip label={item.label} />;
+    return <Chip variant="md" label={item.label} />;
   };
   return (
     <View>

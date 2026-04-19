@@ -9,7 +9,7 @@ const SectionTitle = ({
   actionText?: string;
 }) => {
   return (
-    <View className=" flex-row justify-between items-center">
+    <View className="flex-row justify-between items-center">
       <Text className="text-2xl font-semibold">{title}</Text>
       {actionText && (
         <TouchableOpacity>

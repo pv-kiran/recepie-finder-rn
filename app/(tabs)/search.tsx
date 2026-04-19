@@ -1,8 +1,8 @@
 import PageHeader from "@/components/common/pageHeader";
 import RecipeCard from "@/components/common/recipeCard";
-import SearchBar from "@/components/common/searchBar";
+import SectionTitle from "@/components/common/sectionHeading";
 import CuisinesList from "@/components/cuisinesList";
-import SectionTitle from "@/components/sectionHeading";
+import SearchBar from "@/components/searchBar";
 import { RECEPIE_DATA, Recipe } from "@/constants/recipies";
 import { styled } from "nativewind";
 import React from "react";

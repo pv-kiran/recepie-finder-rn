@@ -30,4 +30,10 @@ export const RECEPIE_DATA: Recipe[] = [
     time: "45 min",
     likes: 120,
   },
+  {
+    id: "5",
+    name: "Chicken & Turnip Lentil Soup",
+    time: "40 min",
+    likes: 110,
+  },
 ];

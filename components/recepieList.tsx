@@ -8,7 +8,7 @@ import { FlatList, Image, Text, View } from "react-native";
 const RecepieList = () => {
   const renderRecipeList = ({ item }: { item: Recipe }) => {
     return (
-      <View className="w-60 h-60 p-3 rounded-2xl bg-[#f1f6f5] shadow gap-3">
+      <View className="w-60 h-60 p-3 rounded-2xl bg-[#f1f6f5] shadow-xs gap-3">
         <Image source={images.feautred} className="w-full h-[70%] rounded-xl" />
         <View className="gap-1">
           <Text

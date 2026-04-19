@@ -2,6 +2,7 @@ import CuisinesList from "@/components/cuisinesList";
 import FeaturedList from "@/components/featuredList";
 import Greetings from "@/components/greetings";
 import RecepieList from "@/components/recepieList";
+import SectionTitle from "@/components/sectionHeading";
 
 import { styled } from "nativewind";
 import React from "react";
@@ -16,9 +17,18 @@ const Recipes = () => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View className="p-4 gap-6">
           <Greetings />
-          <FeaturedList />
-          <CuisinesList />
-          <RecepieList />
+          <View className="gap-4">
+            <SectionTitle title="Featured" />
+            <FeaturedList />
+          </View>
+          <View className="gap-4">
+            <SectionTitle title="Category" actionText="See all" />
+            <CuisinesList />
+          </View>
+          <View className="gap-4">
+            <SectionTitle title="Popular Recipes" actionText="See All" />
+            <RecepieList />
+          </View>
         </View>
       </ScrollView>
     </SafeArea>

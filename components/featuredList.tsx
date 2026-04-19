@@ -1,5 +1,4 @@
 import { images } from "@/assets/images";
-import Section from "@/components/section";
 import { DATA, RecipeItem } from "@/constants/feutured";
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
@@ -41,17 +40,14 @@ const FeaturedList = () => {
   };
   return (
     <View>
-      <View className="gap-4">
-        <Section title="Featured" />
-        <FlatList
-          data={DATA}
-          keyExtractor={(item) => item.id}
-          renderItem={renderFeaturedList}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{ gap: 12 }}
-        />
-      </View>
+      <FlatList
+        data={DATA}
+        keyExtractor={(item) => item.id}
+        renderItem={renderFeaturedList}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{ gap: 12 }}
+      />
     </View>
   );
 };

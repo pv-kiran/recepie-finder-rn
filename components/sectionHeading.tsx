@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
-const Section = ({
+const SectionTitle = ({
   title,
   actionText,
 }: {
@@ -22,4 +22,4 @@ const Section = ({
   );
 };
 
-export default Section;
+export default SectionTitle;

@@ -1,0 +1,38 @@
+import { images } from "@/assets/images";
+import { Recipe } from "@/constants/recipies";
+import { Ionicons } from "@expo/vector-icons";
+import React from "react";
+import { Image, Text, TouchableOpacity, View } from "react-native";
+
+const RecipeCard = ({ recipe }: { recipe: Recipe }) => {
+  return (
+    <View key={recipe.id}>
+      <View className="bg-[#f1f6f5] shadow-sm p-3 rounded-xl flex-row items-center gap-3">
+        <Image
+          source={images.feautred}
+          className="h-24 w-24 rounded-2xl shrink-0"
+        />
+        <View className="flex-1 gap-3">
+          <Text numberOfLines={2} className="font-semibold text-xl">
+            {recipe.name}
+          </Text>
+          <View className="flex-row gap-4">
+            <View className="flex-row gap-2 items-center">
+              <Ionicons name="heart" size={18} color={"#6FAFB0"} />
+              <Text className="text-gray-400">{recipe.likes}</Text>
+            </View>
+            <View className="flex-row gap-2 items-center">
+              <Ionicons name="time-outline" size={18} color={"#6FAFB0"} />
+              <Text className="text-gray-400">{recipe.time}</Text>
+            </View>
+          </View>
+        </View>
+        <TouchableOpacity className="bg-[#1e1d1d] items-center py-2 px-3 rounded-xl shrink-0">
+          <Ionicons name="arrow-forward" size={18} color={"#fff"} />
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
+export default RecipeCard;

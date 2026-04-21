@@ -1,7 +1,7 @@
+import RecipeCard from "@/components/common/RecipeCard";
 import { RECEPIE_DATA, Recipe } from "@/constants/recipies";
 import React from "react";
 import { FlatList, View } from "react-native";
-import RecipeCard from "./common/recipeCard";
 
 const RecepieList = () => {
   const renderRecipeList = ({ item }: { item: Recipe }) => {

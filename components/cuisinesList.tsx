@@ -1,4 +1,4 @@
-import Chip from "@/components/common/chip";
+import Chip from "@/components/common/Chip";
 import { CUISINE, CUISINES } from "@/constants/cuisines";
 import React from "react";
 import { FlatList, View } from "react-native";

@@ -1,15 +1,30 @@
+import PageHeader from "@/components/common/PageHeader";
+import RecipeCard from "@/components/common/RecipeCard";
+import { RECEPIE_DATA, Recipe } from "@/constants/recipies";
 import { styled } from "nativewind";
 import React from "react";
-import { Text, View } from "react-native";
+import { FlatList, View } from "react-native";
 import { SafeAreaView as RNSafeArea } from "react-native-safe-area-context";
 const SafeArea = styled(RNSafeArea);
 
 const favourites = () => {
+  const favouriteList = ({ item }: { item: Recipe }) => {
+    return <RecipeCard recipe={item} type="HORIZONTAL" />;
+  };
   return (
-    <SafeArea className="flex-1">
-      <View className="px-4">
-        <Text>favourites</Text>
-      </View>
+    <SafeArea className="flex-1" edges={["top"]}>
+      <FlatList
+        ListHeaderComponent={() => (
+          <View className="gap-6">
+            <PageHeader route="/(tabs)/recipes" title="Favourites" />
+          </View>
+        )}
+        data={RECEPIE_DATA}
+        keyExtractor={(item) => item.id}
+        renderItem={favouriteList}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ padding: 14, gap: 16 }}
+      />
     </SafeArea>
   );
 };

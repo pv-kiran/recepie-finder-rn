@@ -1,4 +1,4 @@
-import Chip from "@/components/common/chip";
+import Chip from "@/components/common/Chip";
 import { FilterOption } from "@/constants/filterOptions";
 import { Text, View } from "react-native";
 

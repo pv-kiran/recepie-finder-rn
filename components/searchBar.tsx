@@ -1,14 +1,14 @@
-import FilterOptions from "@/components/common/filterOptions";
+import FilterOptions from "@/components/common/FilterOptions";
 import { CUISINES, DIETS, MEAL_TYPES } from "@/constants/filterOptions";
 import { Ionicons } from "@expo/vector-icons";
 import React, { useState } from "react";
 import {
-  Modal,
-  Pressable,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
+    Modal,
+    Pressable,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View,
 } from "react-native";
 
 const SearchBar = () => {

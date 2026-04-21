@@ -5,3 +5,8 @@ export interface TabItem {
   title: string;
   icon: keyof typeof Ionicons.glyphMap;
 }
+
+export interface TabSwitchItem {
+  key: string;
+  label: string;
+}

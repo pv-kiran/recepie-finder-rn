@@ -1,4 +1,4 @@
-import { TabItem } from "@/types/navigation";
+import { TabItem, TabSwitchItem } from "@/types/navigation";
 
 export const TABS: TabItem[] = [
   {
@@ -16,4 +16,9 @@ export const TABS: TabItem[] = [
     title: "Favourites",
     icon: "heart",
   },
+];
+
+export const TAB_SWITCHERS: TabSwitchItem[] = [
+  { key: "ingredients", label: "Ingredients" },
+  { key: "instructions", label: "Instructions" },
 ];

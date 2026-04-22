@@ -3,20 +3,18 @@ import { CUISINES, DIETS, MEAL_TYPES } from "@/constants/filterOptions";
 import { Ionicons } from "@expo/vector-icons";
 import React, { useState } from "react";
 import {
-    Modal,
-    Pressable,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  Modal,
+  Pressable,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 const SearchBar = () => {
   const [query, setQuery] = useState<string>("");
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
-  const handleSearch = () => {
-    console.log("Searching for:", query);
-  };
+  const handleSearch = () => {};
 
   return (
     <View className="flex-row gap-2">

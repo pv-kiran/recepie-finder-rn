@@ -1,4 +1,6 @@
 import "@/global.css";
+import { queryClient } from "@/lib/react-query";
+import { QueryClientProvider } from "@tanstack/react-query";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
@@ -16,12 +18,14 @@ export default function RootLayout() {
     prepare();
   }, []);
   return (
-    <SafeAreaProvider className="flex-1">
-      <Stack
-        screenOptions={{
-          headerShown: false,
-        }}
-      />
-    </SafeAreaProvider>
+    <QueryClientProvider client={queryClient}>
+      <SafeAreaProvider className="flex-1">
+        <Stack
+          screenOptions={{
+            headerShown: false,
+          }}
+        />
+      </SafeAreaProvider>
+    </QueryClientProvider>
   );
 }

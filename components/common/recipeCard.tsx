@@ -1,5 +1,4 @@
-import { images } from "@/assets/images";
-import { Recipe } from "@/constants/recipies";
+import { Recipe } from "@/types/recipe";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import React from "react";
@@ -29,24 +28,27 @@ const RecipeCard = ({
       <View key={recipe.id}>
         {type === "VERTICAL" ? (
           <View className="w-60 h-60 p-3 rounded-2xl bg-[#f1f6f5] shadow gap-3">
-            <Image
-              source={images.feautred}
-              className="w-full h-[70%] rounded-xl"
-            />
+            <View className="w-full h-[75%] rounded-2xl overflow-hidden">
+              <Image
+                source={{ uri: recipe.image }}
+                resizeMode="cover"
+                className="w-full h-full"
+              />
+            </View>
             <View className="gap-1">
               <Text
-                numberOfLines={2}
+                numberOfLines={1}
                 className="font-semibold leading-5 text-left text-[14px]">
-                {recipe.name}
+                {recipe.title}
               </Text>
               <View className="flex-row justify-between items-center">
                 <View className="flex-row gap-2">
                   <Ionicons name="heart" size={18} color={"#6FAFB0"} />
-                  <Text className="text-gray-400">{recipe.likes}</Text>
+                  <Text className="text-gray-400">{recipe.aggregateLikes}</Text>
                 </View>
                 <View className="flex-row gap-2">
                   <Ionicons name="time-outline" size={18} color={"#6FAFB0"} />
-                  <Text className="text-gray-400">{recipe.time}</Text>
+                  <Text className="text-gray-400">{recipe.readyInMinutes}</Text>
                 </View>
               </View>
             </View>
@@ -54,21 +56,21 @@ const RecipeCard = ({
         ) : (
           <View className="bg-[#f1f6f5] shadow-sm p-3 rounded-xl flex-row items-center gap-3">
             <Image
-              source={images.feautred}
+              source={{ uri: recipe.image }}
               className="h-24 w-24 rounded-2xl shrink-0"
             />
             <View className="flex-1 gap-3">
-              <Text numberOfLines={2} className="font-semibold text-lg">
-                {recipe.name}
+              <Text numberOfLines={1} className="font-semibold text-lg">
+                {recipe.title}
               </Text>
               <View className="flex-row gap-4">
                 <View className="flex-row gap-2 items-center">
                   <Ionicons name="heart" size={18} color={"#6FAFB0"} />
-                  <Text className="text-gray-400">{recipe.likes}</Text>
+                  <Text className="text-gray-400">{recipe.aggregateLikes}</Text>
                 </View>
                 <View className="flex-row gap-2 items-center">
                   <Ionicons name="time-outline" size={18} color={"#6FAFB0"} />
-                  <Text className="text-gray-400">{recipe.time}</Text>
+                  <Text className="text-gray-400">{recipe.readyInMinutes}</Text>
                 </View>
               </View>
             </View>

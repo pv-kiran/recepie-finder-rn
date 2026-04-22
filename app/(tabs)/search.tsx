@@ -30,7 +30,7 @@ const search = () => {
       <FlatList
         ListHeaderComponent={() => (
           <View className="gap-6">
-            <PageHeader route="/(tabs)/recipes" title="Search" />
+            <PageHeader route="/(tabs)/home" title="Search" />
             <SearchBar />
             <CuisinesList />
             <SectionTitle title="Search results" />

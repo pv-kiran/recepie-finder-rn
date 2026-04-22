@@ -1,20 +1,20 @@
 import { Ionicons } from "@expo/vector-icons";
 import React, { useState } from "react";
 import {
-    Text,
-    TouchableOpacity,
-    useWindowDimensions,
-    View,
+  Text,
+  TouchableOpacity,
+  useWindowDimensions,
+  View,
 } from "react-native";
 import RenderHtml from "react-native-render-html";
 const RecipeInfo = ({
   title,
-  descrption,
+  descrption = "",
   time,
 }: {
-  title: string;
-  descrption: string;
-  time: number;
+  title: string | undefined;
+  descrption: string | undefined;
+  time: number | undefined;
 }) => {
   const { width } = useWindowDimensions();
   const [expanded, setExpanded] = useState<boolean>(false);

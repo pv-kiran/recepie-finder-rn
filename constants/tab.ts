@@ -2,8 +2,8 @@ import { TabItem, TabSwitchItem } from "@/types/navigation";
 
 export const TABS: TabItem[] = [
   {
-    name: "recipes",
-    title: "Recipes",
+    name: "home",
+    title: "Home",
     icon: "restaurant",
   },
   {

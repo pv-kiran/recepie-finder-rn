@@ -5,17 +5,23 @@ import TabSwitcher from "@/components/common/TabSwitcher";
 import Ingredients from "@/components/Ingredients";
 import Instructions from "@/components/Instructions";
 import RecipeInfo from "@/components/RecipeInfo";
-import { recepie } from "@/constants/recipies";
 import { TAB_SWITCHERS } from "@/constants/tab";
 import { useRouter } from "expo-router";
 import { styled } from "nativewind";
 import React, { useState } from "react";
-import { Image, ScrollView, View } from "react-native";
+import { Image, ScrollView, Text, View } from "react-native";
 
+import { useRecipeDetails } from "@/hooks/useRecipes";
+import { useLocalSearchParams } from "expo-router";
 import { SafeAreaView as RNSafeArea } from "react-native-safe-area-context";
+
 const SafeArea = styled(RNSafeArea);
 
 const Recipe = () => {
+  const { id } = useLocalSearchParams<{ id: string }>();
+
+  const { data, isLoading, error } = useRecipeDetails(Number(id));
+
   const router = useRouter();
   const handleBack = () => {
     router.back();
@@ -24,11 +30,18 @@ const Recipe = () => {
 
   const [activeTab, setActiveTab] = useState<string>("ingredients");
 
+  if (isLoading) return <Text>Loading...</Text>;
+  if (error) return <Text>Something went wrong</Text>;
+
   return (
     <SafeArea className="flex-1">
       <View className="flex-1 bg-white">
         <View className="h-72 relative">
-          <Image source={images.feautred} className="w-full h-full" />
+          <Image
+            source={{ uri: data?.image }}
+            className="w-full h-full"
+            resizeMode="cover"
+          />
           <View className="absolute top-0 w-full flex-row p-4 justify-between">
             <ActionBtn icon="arrow-back" action={() => handleBack()} />
             <ActionBtn icon="heart-outline" action={() => handleFavourite()} />
@@ -44,17 +57,29 @@ const Recipe = () => {
                 gap: 6,
               }}>
               <RecipeInfo
-                title={recepie.title}
-                descrption={recepie.description}
-                time={55}
+                title={data?.title}
+                descrption={data?.summary}
+                time={data?.cookingMinutes}
               />
               <View className="flex-row justify-between py-2">
-                <IngradiantImg source={images.carb} label="65g Carbs" />
-                <IngradiantImg source={images.carb} label="65g Carbs" />
+                <IngradiantImg
+                  source={images.carb}
+                  label={`${data?.pricePerServing} carbs`}
+                />
+                <IngradiantImg
+                  source={images.fat}
+                  label={`${data?.servings}g fats`}
+                />
               </View>
               <View className="flex-row justify-between">
-                <IngradiantImg source={images.carb} label="65g Carbs" />
-                <IngradiantImg source={images.carb} label="65g Carbs" />
+                <IngradiantImg
+                  source={images.protien}
+                  label={`${data?.aggregateLikes}g protiens`}
+                />
+                <IngradiantImg
+                  source={images.carb}
+                  label={`${data?.servings}g Kcal`}
+                />
               </View>
               <TabSwitcher
                 tabs={TAB_SWITCHERS}
@@ -65,7 +90,13 @@ const Recipe = () => {
               />
 
               {/* Render content based on active tab */}
-              {activeTab === "ingredients" ? <Ingredients /> : <Instructions />}
+              {activeTab === "ingredients" ? (
+                <Ingredients ingradient={data?.extendedIngredients} />
+              ) : (
+                <Instructions
+                  instructions={data?.analyzedInstructions[0].steps}
+                />
+              )}
             </ScrollView>
           </View>
         </View>

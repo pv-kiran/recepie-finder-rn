@@ -11,7 +11,7 @@ import { SafeAreaView as RNSafeArea } from "react-native-safe-area-context";
 
 const SafeArea = styled(RNSafeArea);
 
-const Recipes = () => {
+const Home = () => {
   const { data, isLoading, error } = useRecipes();
 
   if (isLoading) return <Text>Loading...</Text>;
@@ -40,4 +40,4 @@ const Recipes = () => {
   );
 };
 
-export default Recipes;
+export default Home;

@@ -1,10 +1,10 @@
 import React from "react";
 import {
-    Image,
-    ImageSourcePropType,
-    Pressable,
-    Text,
-    View,
+  Image,
+  ImageSourcePropType,
+  Pressable,
+  Text,
+  View,
 } from "react-native";
 
 const IngradiantImg = ({
@@ -16,7 +16,7 @@ const IngradiantImg = ({
 }) => {
   return (
     <View className="mb-1">
-      <View className="flex-row items-center gap-2">
+      <View className="flex-row w-3xs items-center gap-2">
         <Pressable className="rounded-lg p-2 bg-gray-200">
           <Image source={source} className="w-4 h-4" />
         </Pressable>

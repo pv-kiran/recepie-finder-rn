@@ -19,7 +19,7 @@ export default function Index() {
           </Text>
           <TouchableOpacity
             className="bg-primary w-[80%] p-3 rounded-2xl mx-auto"
-            onPress={() => router.replace("/(tabs)/recipes")}>
+            onPress={() => router.replace("/(tabs)/home")}>
             <Text className="text-white text-center text-xl font-medium">
               Lets Go
             </Text>

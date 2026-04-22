@@ -91,10 +91,10 @@ const Recipe = () => {
 
               {/* Render content based on active tab */}
               {activeTab === "ingredients" ? (
-                <Ingredients ingradient={data?.extendedIngredients} />
+                <Ingredients ingradient={data?.extendedIngredients || []} />
               ) : (
                 <Instructions
-                  instructions={data?.analyzedInstructions[0].steps}
+                  instructions={data?.analyzedInstructions[0].steps || []}
                 />
               )}
             </ScrollView>

@@ -4,7 +4,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import React from "react";
 import { FlatList, Image, Pressable, Text, View } from "react-native";
-const FeaturedList = ({ recipeList }: { recipeList: Recipe[] | undefined }) => {
+const FeaturedList = ({ recipeList }: { recipeList: Recipe[] }) => {
   const router = useRouter();
   const onClick = (recipe: number) => {
     router.push({

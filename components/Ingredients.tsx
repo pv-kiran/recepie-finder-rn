@@ -3,11 +3,7 @@ import { Ingredient } from "@/types/recipe";
 import React from "react";
 import { Image, ScrollView, Text, View } from "react-native";
 images;
-const Ingredients = ({
-  ingradient,
-}: {
-  ingradient: Ingredient[] | undefined;
-}) => {
+const Ingredients = ({ ingradient }: { ingradient: Ingredient[] }) => {
   const IngradientCard = ({ item }: { item: Ingredient }) => {
     return (
       <View className="shadow-sm rounded-xl py-2 px-4 flex-row items-center gap-4">

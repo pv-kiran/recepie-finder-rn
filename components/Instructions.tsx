@@ -5,7 +5,7 @@ import { ScrollView, Text, View } from "react-native";
 const Instructions = ({
   instructions,
 }: {
-  instructions: InstructionStep[] | undefined;
+  instructions: InstructionStep[];
 }) => {
   const InstructionCard = ({
     instruction,

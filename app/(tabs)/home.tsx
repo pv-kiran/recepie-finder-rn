@@ -24,7 +24,7 @@ const Home = () => {
           <Greetings />
           <View className="gap-4">
             <SectionTitle title="Featured" />
-            <FeaturedList recipeList={data?.results} />
+            <FeaturedList recipeList={data?.results || []} />
           </View>
           <View className="gap-4">
             <SectionTitle title="Category" actionText="See all" />
@@ -32,7 +32,7 @@ const Home = () => {
           </View>
           <View className="gap-4">
             <SectionTitle title="Popular Recipes" actionText="See All" />
-            <RecepieList recipeList={data?.results} />
+            <RecepieList recipeList={data?.results || []} />
           </View>
         </View>
       </ScrollView>

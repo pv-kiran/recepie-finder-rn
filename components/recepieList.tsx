@@ -3,7 +3,7 @@ import { Recipe } from "@/types/recipe";
 import React from "react";
 import { FlatList, View } from "react-native";
 
-const RecepieList = ({ recipeList }: { recipeList: Recipe[] | undefined }) => {
+const RecepieList = ({ recipeList }: { recipeList: Recipe[] }) => {
   const renderRecipeList = ({ item }: { item: Recipe }) => {
     return <RecipeCard recipe={item} type="VERTICAL" />;
   };

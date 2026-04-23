@@ -7,15 +7,12 @@ import Instructions from "@/components/Instructions";
 import RecipeInfo from "@/components/RecipeInfo";
 import { TAB_SWITCHERS } from "@/constants/tab";
 import { useRouter } from "expo-router";
-import { styled } from "nativewind";
 import React, { useState } from "react";
 import { Image, ScrollView, Text, View } from "react-native";
 
+import ScreenWrapper from "@/components/common/ScreenWrapper";
 import { useRecipeDetails } from "@/hooks/useRecipes";
 import { useLocalSearchParams } from "expo-router";
-import { SafeAreaView as RNSafeArea } from "react-native-safe-area-context";
-
-const SafeArea = styled(RNSafeArea);
 
 const Recipe = () => {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -34,7 +31,7 @@ const Recipe = () => {
   if (error) return <Text>Something went wrong</Text>;
 
   return (
-    <SafeArea className="flex-1">
+    <ScreenWrapper>
       <View className="flex-1 bg-white">
         <View className="h-72 relative">
           <Image
@@ -101,7 +98,7 @@ const Recipe = () => {
           </View>
         </View>
       </View>
-    </SafeArea>
+    </ScreenWrapper>
   );
 };
 

@@ -1,15 +1,13 @@
+import ScreenWrapper from "@/components/common/ScreenWrapper";
 import SectionTitle from "@/components/common/SectionHeading";
 import CuisinesList from "@/components/CuisinesList";
 import FeaturedList from "@/components/FeaturedList";
 import Greetings from "@/components/Greetings";
 import RecepieList from "@/components/RecepieList";
 import { useRecipes } from "@/hooks/useRecipes";
-import { styled } from "nativewind";
+
 import React from "react";
 import { ScrollView, Text, View } from "react-native";
-import { SafeAreaView as RNSafeArea } from "react-native-safe-area-context";
-
-const SafeArea = styled(RNSafeArea);
 
 const Home = () => {
   const { data, isLoading, error } = useRecipes();
@@ -18,7 +16,7 @@ const Home = () => {
   if (error) return <Text>Something went wrong</Text>;
 
   return (
-    <SafeArea className="flex-1" edges={["top"]}>
+    <ScreenWrapper>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View className="p-4 gap-6">
           <Greetings />
@@ -36,7 +34,7 @@ const Home = () => {
           </View>
         </View>
       </ScrollView>
-    </SafeArea>
+    </ScreenWrapper>
   );
 };
 

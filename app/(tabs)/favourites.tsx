@@ -1,22 +1,20 @@
 import PageHeader from "@/components/common/PageHeader";
 import RecipeCard from "@/components/common/RecipeCard";
+import ScreenWrapper from "@/components/common/ScreenWrapper";
 import { RECEPIE_DATA, Recipe } from "@/constants/recipies";
-import { styled } from "nativewind";
 import React from "react";
 import { FlatList, View } from "react-native";
-import { SafeAreaView as RNSafeArea } from "react-native-safe-area-context";
-const SafeArea = styled(RNSafeArea);
 
 const favourites = () => {
   const favouriteList = ({ item }: { item: Recipe }) => {
     return <RecipeCard recipe={item} type="HORIZONTAL" />;
   };
   return (
-    <SafeArea className="flex-1" edges={["top"]}>
+    <ScreenWrapper>
       <FlatList
         ListHeaderComponent={() => (
           <View className="gap-6">
-            <PageHeader route="/(tabs)/recipes" title="Favourites" />
+            <PageHeader route="/(tabs)/home" title="Favourites" />
           </View>
         )}
         data={RECEPIE_DATA}
@@ -25,7 +23,7 @@ const favourites = () => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ padding: 14, gap: 16 }}
       />
-    </SafeArea>
+    </ScreenWrapper>
   );
 };
 

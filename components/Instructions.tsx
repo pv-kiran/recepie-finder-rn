@@ -14,7 +14,9 @@ const Instructions = ({
   }) => {
     return (
       <View className="bg-[#cbd0d1] p-2 rounded-lg">
-        <Text className="text-[14px] font-semibold">{instruction.number}</Text>
+        <Text className="text-[14px] font-semibold">
+          Step {instruction.number}
+        </Text>
         <Text className="text-[#f6f3f3] ">{instruction.step}</Text>
       </View>
     );

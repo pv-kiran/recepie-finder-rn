@@ -1,15 +1,13 @@
 import PageHeader from "@/components/common/PageHeader";
 import RecipeCard from "@/components/common/RecipeCard";
+import ScreenWrapper from "@/components/common/ScreenWrapper";
 import SectionTitle from "@/components/common/SectionHeading";
 import CuisinesList from "@/components/CuisinesList";
 import SearchBar from "@/components/SearchBar";
 import { useRecipes } from "@/hooks/useRecipes";
 import { Recipe } from "@/types/recipe";
-import { styled } from "nativewind";
 import React from "react";
 import { FlatList, Text, View } from "react-native";
-import { SafeAreaView as RNSafeArea } from "react-native-safe-area-context";
-const SafeArea = styled(RNSafeArea);
 
 const search = () => {
   const { data, isLoading, error } = useRecipes({ number: 12 });
@@ -26,7 +24,7 @@ const search = () => {
     return <RecipeCard recipe={item} type="HORIZONTAL" />;
   };
   return (
-    <SafeArea className="flex-1" edges={["top"]}>
+    <ScreenWrapper>
       <FlatList
         ListHeaderComponent={() => (
           <View className="gap-6">
@@ -42,7 +40,7 @@ const search = () => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ padding: 14, gap: 16 }}
       />
-    </SafeArea>
+    </ScreenWrapper>
   );
 };
 
